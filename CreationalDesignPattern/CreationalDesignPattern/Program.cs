@@ -1,4 +1,6 @@
-﻿using Factory.Models.Ecommerce;
+﻿using Factory;
+using Factory.Models.Ecommerce;
+using Factory.Models.Shipping.Factories;
 using SimpleFactory;
 using SimpleFactory.ConcreateFactory;
 using SimpleFactory.Country;
@@ -41,7 +43,7 @@ namespace CreationalDesignPattern
             order.LineItems.Add(new Item("CONSULTING", "Building a website", 100m), 1);
             #endregion
 
-            var cart = new ShoppingCart(order);
+            var cart = new ShoppingCart(order, new StandardShippingProviderFactory());
 
             var shippingLabel = cart.Finalize();
 

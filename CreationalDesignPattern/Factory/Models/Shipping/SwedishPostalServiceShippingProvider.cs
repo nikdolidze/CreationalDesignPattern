@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Factory.Models.Ecommerce;
+using System;
 
 namespace Factory.Models.Shipping
 {
@@ -6,14 +7,9 @@ namespace Factory.Models.Shipping
     {
         private readonly string apiKey;
 
-        public SwedishPostalServiceShippingProvider(
-            string apiKey,
-            ShippingCostCalculator shippingCostCalculator,
-            CustomsHandlingOptions customsHandlingOptions,
-            InsuranceOptions insuranceOptions)
+        public SwedishPostalServiceShippingProvider(string apiKey, ShippingCostCalculator shippingCostCalculator, CustomsHandlingOptions customsHandlingOptions, InsuranceOptions insuranceOptions)
         {
             this.apiKey = apiKey;
-
             ShippingCostCalculator = shippingCostCalculator;
             CustomsHandlingOptions = customsHandlingOptions;
             InsuranceOptions = insuranceOptions;

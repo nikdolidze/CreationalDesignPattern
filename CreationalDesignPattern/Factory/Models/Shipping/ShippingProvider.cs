@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Factory.Models.Ecommerce;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
