@@ -12,12 +12,6 @@ namespace Factory.Models
         private IEnumerable<Type> facories;
         public PurchanseProviderFactoryProvider()
         {
-            var a = Assembly.GetAssembly(typeof(PurchanseProviderFactoryProvider));
-            var v = a.GetTypes();
-            var c = v.Where(t => typeof(PurchanseProviderFactoryProvider).IsAssignableFrom(t));
-
-
-
             facories = Assembly.GetAssembly(typeof(PurchanseProviderFactoryProvider))
                 .GetTypes()
                 .Where(t=> typeof(IPurchaseProviderFactory).IsAssignableFrom(t));

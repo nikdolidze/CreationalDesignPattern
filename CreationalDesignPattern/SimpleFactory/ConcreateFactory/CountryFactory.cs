@@ -19,9 +19,6 @@ namespace SimpleFactory.ConcreateFactory
             }
         }
 
-        public static ICountry CrateCountry(object xiamo)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

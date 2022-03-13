@@ -20,7 +20,6 @@ namespace Factory.Models.Shipping.Factories
             return provider;
         }
     }
-
     public class StandardShippingProviderFactory : ShippingProviderFactory
     {
         public override ShippingProvider CreateShippingProvider(string country)

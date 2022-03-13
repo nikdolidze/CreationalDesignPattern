@@ -2,16 +2,28 @@
 using Factory.Models;
 using Factory.Models.Ecommerce;
 using Factory.Models.Shipping.Factories;
+using FactoryMethod;
 using SimpleFactory;
 using SimpleFactory.ConcreateFactory;
 using SimpleFactory.Country;
+using Singlenton;
 using System;
+using System.Collections.Generic;
 
 namespace CreationalDesignPattern
 {
     internal class Program
     {
         static void Main(string[] args)
+        {
+
+            FactoryMethod();
+            Singlenton();
+            Factory();
+            SimpleFactory();
+
+        }
+        public static void Factory()
         {
             #region Create Order
             Console.Write("Recipient Country: ");
@@ -67,14 +79,7 @@ namespace CreationalDesignPattern
             var shippingLabel = cart.Finalize();
 
             Console.WriteLine(shippingLabel);
-
-
-
-
-            SimpleFactory();
-
         }
-
         public static void SimpleFactory()
         {
             ICountry country1 = CountryFactory.CrateCountry(CountryEnum.Georgia);
@@ -82,6 +87,38 @@ namespace CreationalDesignPattern
 
             ICountry country2 = CountryFactory.CrateCountry(CountryEnum.Usa);
             country2.GetCountry();
+
+        }
+        public static void Singlenton()
+        {
+            var instance1 = logger.Instance;
+            var instance2 = logger.Instance;
+            if (instance1 == instance2 && instance2 == logger.Instance)
+            {
+                Console.WriteLine("instances are same");
+            }
+
+            instance1.Log($"message from {nameof(instance1)}");
+            instance1.Log($"message from {nameof(instance2)}");
+            logger.Instance.Log($"message from {nameof(logger.Instance)}");
+
+            Console.Read();
+        }
+        public static void FactoryMethod()
+        {
+
+            var factories = new List<DiscountFactory> {
+                   new CodeDiscountFactory(Guid.NewGuid()),
+                   new CountryDiscountFactory("BE") };
+
+            foreach (var factory in factories)
+            {
+                var discountService = factory.CraeteDiscountService();
+                Console.WriteLine($"Percentage {discountService.DiscountPercentage} " +
+                    $"coming from {discountService}");
+            }
+
+            Console.ReadKey();
 
         }
     }
