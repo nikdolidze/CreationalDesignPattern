@@ -96,7 +96,7 @@ namespace Factory.Models.Shipping.Factories
             return shippingProvider;
         }
     }
-    public class GlovalExpressShipingProciderFactory : ShippingProviderFactory
+    public class GlobalExpressShipingProciderFactory : ShippingProviderFactory
     {
         public override ShippingProvider CreateShippingProvider(string country)
         {

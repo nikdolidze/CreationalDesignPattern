@@ -1,4 +1,5 @@
 ﻿using Factory;
+using Factory.Models;
 using Factory.Models.Ecommerce;
 using Factory.Models.Shipping.Factories;
 using SimpleFactory;
@@ -42,8 +43,26 @@ namespace CreationalDesignPattern
             order.LineItems.Add(new Item("CSHARP_SMORGASBORD", "C# Smorgasbord", 100m), 1);
             order.LineItems.Add(new Item("CONSULTING", "Building a website", 100m), 1);
             #endregion
+            IPurchaseProviderFactory purchaseProviderFactory;
 
-            var cart = new ShoppingCart(order, new StandardShippingProviderFactory());
+            var factoryProvider = new PurchanseProviderFactoryProvider();
+            purchaseProviderFactory = factoryProvider.CreateFactorFor(order.Sender.Country);
+
+            //if(order.Sender.Country == "Sweed")
+            //{
+            //    purchaseProviderFactory = new SwedenPurchaseProviderFactory();
+            //}
+            //else if(order.Sender.Country == "Australia")
+            //{
+            //    purchaseProviderFactory= new AustralianPurchaseProviderFactory();
+            //}
+            //else
+            //{
+            //    throw new Exception();
+            //}
+
+
+            var cart = new ShoppingCart(order, purchaseProviderFactory);
 
             var shippingLabel = cart.Finalize();
 

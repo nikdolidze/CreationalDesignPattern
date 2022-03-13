@@ -12,6 +12,7 @@ namespace Factory
     public class ShoppingCart
     {
         private readonly Order order;
+        private readonly IPurchaseProviderFactory purchaseProviderFactory;
         private readonly ShippingProviderFactory shipingProviderFactory;
 
         public ShoppingCart(Order order, ShippingProviderFactory shipingProviderFactory)
@@ -19,10 +20,23 @@ namespace Factory
             this.order = order;
             this.shipingProviderFactory = shipingProviderFactory;
         }
+        public ShoppingCart(Order order, IPurchaseProviderFactory purchaseProviderFactory)
+        {
+            this.order = order;
+            this.purchaseProviderFactory = purchaseProviderFactory;
+        }
+        
 
         public string Finalize()
         {
-          var shippingProvider  = shipingProviderFactory.GetShippingProvider(order.Sender.Country);
+         var shippingProviderodl  = shipingProviderFactory.GetShippingProvider(order.Sender.Country);
+          var shippingProvider  = purchaseProviderFactory.CrateShipingProvider(order);
+
+            var invoice = purchaseProviderFactory.CrateInvoice(order);
+            
+            var summary = purchaseProviderFactory.CrateSummary(order);
+            summary.Send();
+
 
             order.ShippingStatus = ShippingStatus.ReadyForShippment;
 
