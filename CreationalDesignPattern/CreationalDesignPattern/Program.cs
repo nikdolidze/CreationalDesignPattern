@@ -1,4 +1,7 @@
-﻿using Factory;
+﻿using AbstractFactory;
+using Builder;
+using Builder_Pattern;
+using Factory;
 using Factory.Models;
 using Factory.Models.Ecommerce;
 using Factory.Models.Shipping.Factories;
@@ -17,11 +20,41 @@ namespace CreationalDesignPattern
         static void Main(string[] args)
         {
 
+            var items = new List<FurnitureItem>
+            {
+                new FurnitureItem("Sectional Couch", 55.5, 22.4, 78.6, 35.0),
+                new FurnitureItem("Nightstand", 25.0, 12.4, 20.0, 10.0),
+                new FurnitureItem("Dining Table", 105.0, 35.4, 100.6, 55.5),
+            };
+
+
+
+            Builder();
+            AbstractFactory();
             FactoryMethod();
             Singlenton();
             Factory();
             SimpleFactory();
 
+        }
+        public static void Builder()
+        {
+            var garage = new Garage();
+
+            var miniBuilder = new MiniBuilder();
+            var bmwBuilder = new BMWBuilder();
+
+            garage.Construct(miniBuilder);
+            Console.WriteLine(miniBuilder.Car.ToString());
+            // or: 
+            garage.Show();
+
+            garage.Construct(bmwBuilder);
+            Console.WriteLine(bmwBuilder.Car.ToString());
+            // or: 
+            garage.Show();
+
+            Console.ReadKey();
         }
         public static void Factory()
         {
@@ -120,6 +153,19 @@ namespace CreationalDesignPattern
 
             Console.ReadKey();
 
+        }
+        public static void AbstractFactory()
+        {
+
+            var belgiumShoppingCartPurchaseFactory = new BelgiumShoppingCartPurchaseFactory();
+            var shoppingCartForBelgium = new ShoppingCartClinet(belgiumShoppingCartPurchaseFactory);
+            shoppingCartForBelgium.CalculateCosts();
+
+            var franceShoppingCartPurchaseFactory = new FranceShoppingCartPurchaseFactory();
+            var shoppingCartForFrance = new ShoppingCartClinet(franceShoppingCartPurchaseFactory);
+            shoppingCartForFrance.CalculateCosts();
+
+            Console.ReadKey();
         }
     }
 }
