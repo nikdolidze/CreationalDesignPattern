@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 /*
    the builder patterns aims to separate the construction of a complex object from its representation so that the same construction procces can create differen 
 representation.
@@ -44,18 +47,21 @@ namespace Builder_Pattern
     }
     public interface IFurnitureInventoryBuilder
     {
-        void AddTitle();
-        void AddDimensions();
-        void AddLogistics();
+        IFurnitureInventoryBuilder AddTitle();
+        IFurnitureInventoryBuilder AddDimensions();
+        IFurnitureInventoryBuilder AddLogistics(DateTime dateTime);
         InventoryReport GetDailyReport();
     }
     public class DailyReportBuilder : IFurnitureInventoryBuilder
     {
         private InventoryReport _report;
+        private IEnumerable<FurnitureItem> _items;
 
-        public DailyReportBuilder()
+        public DailyReportBuilder(IEnumerable<FurnitureItem> items)
         {
+
             Reset();
+            _items = items;
         }
 
         public void Reset()
@@ -63,18 +69,22 @@ namespace Builder_Pattern
             _report = new InventoryReport();
         }
 
-        public void AddTitle()
+        public IFurnitureInventoryBuilder AddTitle()
         {
             _report.TitleSection = "--------Daily Inventary Report--------\n\n";
+            return this;
         }
-        public void AddDimensions()
+        public IFurnitureInventoryBuilder AddDimensions()
         {
-            throw new System.NotImplementedException();
+            _report.DimensionsSection = String.Join(Environment.NewLine, _items.Select(x =>
+            $"Product: {x.Name} \nPrice: {x.Price} \nHeigth: {x.Height}"));
+            return this;
         }
 
-        public void AddLogistics()
+        public IFurnitureInventoryBuilder AddLogistics(DateTime dateTime)
         {
-            throw new System.NotImplementedException();
+            _report.LogisticsSection = $"Report generated on {dateTime}";
+            return this;
         }
 
         public InventoryReport GetDailyReport()
@@ -82,6 +92,20 @@ namespace Builder_Pattern
             InventoryReport finishReport = _report;
             Reset();
             return finishReport;
+        }
+    }
+    public class InventoryBuildDirector
+    {
+        private IFurnitureInventoryBuilder _builder;
+        public InventoryBuildDirector(IFurnitureInventoryBuilder concreateBuilder)
+        {
+            _builder = concreateBuilder;
+        }
+        public void BuildCompleteReport()
+        {
+            _builder.AddTitle();
+            _builder.AddDimensions();
+            _builder.AddLogistics(DateTime.Now);
         }
     }
 }
