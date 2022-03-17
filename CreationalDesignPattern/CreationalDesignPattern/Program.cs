@@ -21,23 +21,11 @@ namespace CreationalDesignPattern
     {
         static void Main(string[] args)
         {
-            IBilderMobilePhone bilderMobilePhone = new AndroidMobilePhone();
-            DirectorMobilePhone directorMobilePhone = new DirectorMobilePhone(bilderMobilePhone);
-            directorMobilePhone.Constructor();
-
-
-            var manager = new Manager("Cindy");
-            var managerClone =(Manager) manager.Clone();
-
-            Console.WriteLine($"Manager was cloned : {managerClone.Name}");
-
-            var employee = new Employee("Kevin", manager);
-            var employeeClone = (Employee)employee.Clone();
-            Console.WriteLine($"Employee was  cloned {employeeClone.Name}" +
-                $"With Manager {employeeClone.Manager.Name}");
 
 
 
+            Prototype();
+            Builder3();
             Builder2();
             Builder();
             AbstractFactory();
@@ -46,6 +34,31 @@ namespace CreationalDesignPattern
             Factory();
             SimpleFactory();
 
+        }
+        public static void Prototype()
+        {
+
+            var manager = new Manager("Cindy");
+            var managerClone = (Manager)manager.Clone();
+
+            Console.WriteLine($"Manager was cloned : {managerClone.Name}");
+
+            var employee = new Employee("Kevin", managerClone);
+            var employeeClone = (Employee)employee.Clone(true);
+            Console.WriteLine($"Employee was  cloned {employeeClone.Name}" +
+                $" With Manager {employeeClone.Manager.Name}");
+
+
+            managerClone.Name = "nika";
+            Console.WriteLine($"Employee was  cloned {employeeClone.Name}" +
+         $" With Manager {employeeClone.Manager.Name}");
+
+        }
+        public static void Builder3()
+        {
+            IBilderMobilePhone bilderMobilePhone = new AndroidMobilePhone();
+            DirectorMobilePhone directorMobilePhone = new DirectorMobilePhone(bilderMobilePhone);
+            directorMobilePhone.Constructor();
         }
         public static void Builder2()
         {
