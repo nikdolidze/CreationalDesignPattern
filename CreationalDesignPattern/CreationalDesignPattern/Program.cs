@@ -1,6 +1,7 @@
 ﻿using AbstractFactory;
 using Builder;
 using Builder_Pattern;
+using Builder3;
 using Factory;
 using Factory.Models;
 using Factory.Models.Ecommerce;
@@ -20,6 +21,9 @@ namespace CreationalDesignPattern
     {
         static void Main(string[] args)
         {
+            IBilderMobilePhone bilderMobilePhone = new AndroidMobilePhone();
+            DirectorMobilePhone directorMobilePhone = new DirectorMobilePhone(bilderMobilePhone);
+            directorMobilePhone.Constructor();
 
 
             var manager = new Manager("Cindy");
