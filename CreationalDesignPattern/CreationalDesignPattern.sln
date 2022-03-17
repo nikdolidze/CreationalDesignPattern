@@ -11,19 +11,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleFactory", "SimpleFact
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Factory", "Factory\Factory.csproj", "{C6F3F335-9376-484F-8F58-C1CCD33491D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singlenton", "Singlenton\Singlenton.csproj", "{987A069A-753A-4664-A13F-A6DBF78671E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Singlenton", "Singlenton\Singlenton.csproj", "{987A069A-753A-4664-A13F-A6DBF78671E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryMethod", "FactoryMethod\FactoryMethod.csproj", "{65294506-FD6F-4FAA-AB67-C55F21A9E1BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryMethod", "FactoryMethod\FactoryMethod.csproj", "{65294506-FD6F-4FAA-AB67-C55F21A9E1BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactory", "AbstractFactory\AbstractFactory.csproj", "{ABA8EC34-C3B8-41DA-BA30-52950A0258FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractFactory", "AbstractFactory\AbstractFactory.csproj", "{ABA8EC34-C3B8-41DA-BA30-52950A0258FF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Builder", "Builder", "{6F489CD9-3F5C-4796-82F4-BBE6303C09A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Singlenton", "Singlenton", "{C66133F8-AD70-4048-B70D-D9812DCB8DFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder", "Builder\Builder.csproj", "{05C5FD4E-DE83-41E3-8427-B6FEAC0442D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder", "Builder\Builder.csproj", "{05C5FD4E-DE83-41E3-8427-B6FEAC0442D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder2", "Builder2\Builder2.csproj", "{02703F2A-C798-484A-A8E0-144BB210FADF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder2", "Builder2\Builder2.csproj", "{02703F2A-C798-484A-A8E0-144BB210FADF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prototype", "Prototype", "{9AD70381-A71C-4FBC-A987-E239C95A111F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype", "Prototype\Prototype.csproj", "{D7862543-CA1F-4E65-9435-9B6831F9EF56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,10 @@ Global
 		{02703F2A-C798-484A-A8E0-144BB210FADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02703F2A-C798-484A-A8E0-144BB210FADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02703F2A-C798-484A-A8E0-144BB210FADF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7862543-CA1F-4E65-9435-9B6831F9EF56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7862543-CA1F-4E65-9435-9B6831F9EF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7862543-CA1F-4E65-9435-9B6831F9EF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7862543-CA1F-4E65-9435-9B6831F9EF56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +83,7 @@ Global
 		{ABA8EC34-C3B8-41DA-BA30-52950A0258FF} = {EF9FFE8D-31A6-47DE-AD8E-DC0AFC42A9F4}
 		{05C5FD4E-DE83-41E3-8427-B6FEAC0442D0} = {6F489CD9-3F5C-4796-82F4-BBE6303C09A5}
 		{02703F2A-C798-484A-A8E0-144BB210FADF} = {6F489CD9-3F5C-4796-82F4-BBE6303C09A5}
+		{D7862543-CA1F-4E65-9435-9B6831F9EF56} = {9AD70381-A71C-4FBC-A987-E239C95A111F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3467D8A2-A6D6-4B09-BD39-8ED5070DE7DF}

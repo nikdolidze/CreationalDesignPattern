@@ -6,6 +6,7 @@ using Factory.Models;
 using Factory.Models.Ecommerce;
 using Factory.Models.Shipping.Factories;
 using FactoryMethod;
+using Prototype;
 using SimpleFactory;
 using SimpleFactory.ConcreateFactory;
 using SimpleFactory.Country;
@@ -19,6 +20,18 @@ namespace CreationalDesignPattern
     {
         static void Main(string[] args)
         {
+
+
+            var manager = new Manager("Cindy");
+            var managerClone =(Manager) manager.Clone();
+
+            Console.WriteLine($"Manager was cloned : {managerClone.Name}");
+
+            var employee = new Employee("Kevin", manager);
+            var employeeClone = (Employee)employee.Clone();
+            Console.WriteLine($"Employee was  cloned {employeeClone.Name}" +
+                $"With Manager {employeeClone.Manager.Name}");
+
 
 
             Builder2();

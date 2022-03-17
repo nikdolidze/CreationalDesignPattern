@@ -11,6 +11,7 @@
     <ProjectReference Include="..\Builder\Builder.csproj" />
     <ProjectReference Include="..\FactoryMethod\FactoryMethod.csproj" />
     <ProjectReference Include="..\Factory\Factory.csproj" />
+    <ProjectReference Include="..\Prototype\Prototype.csproj" />
     <ProjectReference Include="..\SimpleFactory\SimpleFactory.csproj" />
     <ProjectReference Include="..\Singlenton\Singlenton.csproj" />
   </ItemGroup>
