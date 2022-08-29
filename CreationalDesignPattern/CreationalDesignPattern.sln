@@ -25,9 +25,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder", "Builder\Builder.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder2", "Builder2\Builder2.csproj", "{02703F2A-C798-484A-A8E0-144BB210FADF}"
 EndProject
+<<<<<<< HEAD
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prototype", "Prototype", "{9AD70381-A71C-4FBC-A987-E239C95A111F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype", "Prototype\Prototype.csproj", "{D7862543-CA1F-4E65-9435-9B6831F9EF56}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder3", "Builder3\Builder3.csproj", "{B0DADC78-3091-4942-BACC-4B8B80EDF901}"
+>>>>>>> ee6df72 (Added 3rd example of builder pattern)
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,10 +71,17 @@ Global
 		{02703F2A-C798-484A-A8E0-144BB210FADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02703F2A-C798-484A-A8E0-144BB210FADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02703F2A-C798-484A-A8E0-144BB210FADF}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{D7862543-CA1F-4E65-9435-9B6831F9EF56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D7862543-CA1F-4E65-9435-9B6831F9EF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7862543-CA1F-4E65-9435-9B6831F9EF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7862543-CA1F-4E65-9435-9B6831F9EF56}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{B0DADC78-3091-4942-BACC-4B8B80EDF901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0DADC78-3091-4942-BACC-4B8B80EDF901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0DADC78-3091-4942-BACC-4B8B80EDF901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0DADC78-3091-4942-BACC-4B8B80EDF901}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> ee6df72 (Added 3rd example of builder pattern)
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,7 +94,11 @@ Global
 		{ABA8EC34-C3B8-41DA-BA30-52950A0258FF} = {EF9FFE8D-31A6-47DE-AD8E-DC0AFC42A9F4}
 		{05C5FD4E-DE83-41E3-8427-B6FEAC0442D0} = {6F489CD9-3F5C-4796-82F4-BBE6303C09A5}
 		{02703F2A-C798-484A-A8E0-144BB210FADF} = {6F489CD9-3F5C-4796-82F4-BBE6303C09A5}
+<<<<<<< HEAD
 		{D7862543-CA1F-4E65-9435-9B6831F9EF56} = {9AD70381-A71C-4FBC-A987-E239C95A111F}
+=======
+		{B0DADC78-3091-4942-BACC-4B8B80EDF901} = {6F489CD9-3F5C-4796-82F4-BBE6303C09A5}
+>>>>>>> ee6df72 (Added 3rd example of builder pattern)
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3467D8A2-A6D6-4B09-BD39-8ED5070DE7DF}
